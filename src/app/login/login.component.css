@@ -82,7 +82,20 @@
     color: white;
     font-size: 0.8rem;
   }
-  .submit-btn {
+  .register-btn {
+    display: block;
+    margin-right: auto;
+    border: none;
+    outline: none;
+    background: #ff652f;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .login-btn {
     display: block;
     margin-left: auto;
     border: none;
@@ -126,4 +139,11 @@
     text-decoration: none;
     color: inherit;
   }
-  
+
+.btns
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 20px;
+}

@@ -77,7 +77,7 @@ export class HomepageComponent implements OnInit {
   }
   routesignup()
   {
-    this.router.navigate(['signup'])
+    this.router.navigate(['register'])
   }
   routelogout()
   {

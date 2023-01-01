@@ -1,8 +1,9 @@
+ 
  <div class="login-wrapper">
-      <form action="" class="form">
+      <form [formGroup]="login" action="" class="form" >
         <h2>Login</h2>
         <div class="input-group">
-          <input type="text" name="loginUser" id="loginUser" required />
+          <input type="text" name="loginUser" id="loginUser" formControlName="email" required />
           <label for="loginUser">User Name</label>
         </div>
         <div class="input-group">
@@ -10,14 +11,18 @@
             type="password"
             name="loginPassword"
             id="loginPassword"
+            formControlName = "password"
             required
           />
           <label for="loginPassword">Password</label> 
         </div>
         <!-- <input type="submit"  value="Login" class="submit-btn"  /> -->
-        <button class="submit-btn" value="Login" (click)="home()" >Login</button>
-
-        <a style="color: aliceblue; margin-top: 10px;" routerLink="/register">New User? Click Here.</a>
+        <!-- <button class="submit-btn" value="Login" (click)="home()" >Login</button> -->
+        <div class="btns">
+        <button (click)="onlogin(login.value)" [disabled]="login.invalid" class="login-btn" value="Login">Login</button>
+        <button (click)="goToSignup()" class="register-btn">SignUp</button>
+        <!-- <a style="color: aliceblue; margin-top: 10px;" routerLink="/register">New User? Click Here.</a> -->
+      </div>
       </form>
       
     </div>
