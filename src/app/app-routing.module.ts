@@ -7,7 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'login',pathMatch:'full'},
+  
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {
@@ -16,6 +16,7 @@ const routes: Routes = [
   {
     path:'display',component:DisplayComponent
   },
+  {path:'', redirectTo:'login',pathMatch:'full'},
   {path:'**',component:PageNotFoundComponent}
 ];
 
