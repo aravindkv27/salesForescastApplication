@@ -1,19 +1,28 @@
-<div class="login-wrapper">
-  <!-- <div class="wrapper">
-    <div class="center-block"> -->
-      <form [formGroup]="login" class="form">
-        <h2>LOGIN PAGE</h2>
+ 
+ <div class="login-wrapper">
+      <form [formGroup]="login" action="" class="form" >
+        <h2>Login</h2>
         <div class="input-group">
-           <input type="email" placeholder="EmailId" class="cvar" formControlName="email"/>
-          </div>
-          <div class="input-group">
-           <input type="password" placeholder="Password" class="cvar" formControlName="pass"/>
-          </div>
-           <div class="btns">
-                <button (click)="onlogin(login.value)" [disabled]="login.invalid" class="login-btn">Login</button>
-                <button (click)="goToSignup()" class="register-btn">SignUp</button>
-           </div>
+          <input type="text" name="loginUser" id="loginUser" formControlName="email" required />
+          <label for="loginUser">User Name</label>
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            name="loginPassword"
+            id="loginPassword"
+            formControlName = "password"
+            required
+          />
+          <label for="loginPassword">Password</label> 
+        </div>
+        <!-- <input type="submit"  value="Login" class="submit-btn"  /> -->
+        <!-- <button class="submit-btn" value="Login" (click)="home()" >Login</button> -->
+        <div class="btns">
+        <button (click)="onlogin(login.value)" [disabled]="login.invalid" class="login-btn" value="Login">Login</button>
+        <button (click)="goToSignup()" class="register-btn">SignUp</button>
+        <!-- <a style="color: aliceblue; margin-top: 10px;" routerLink="/register">New User? Click Here.</a> -->
+      </div>
       </form>
-    <!-- </div>
-  </div> -->
-</div>
+      
+    </div>
