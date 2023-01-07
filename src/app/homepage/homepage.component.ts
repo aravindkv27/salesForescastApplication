@@ -50,7 +50,7 @@ export class HomepageComponent implements OnInit {
   fileUpload() {
     if (this.file) {
       this.showLoader = true;
-      let url = "http://localhost:4200/api/home"
+      let url = "http://localhost:5000/api/home"
       this.http.post(url, this.formfile).subscribe((res) => {
         this.showLoader = false;
         this._snackBar.open("File successfully uploaded", "Ok", { duration: 5000 });
@@ -72,6 +72,7 @@ export class HomepageComponent implements OnInit {
     this.formfile.delete('file');
     // this.fileSelect
   }
+  
   seeCharts(){
     this.router.navigate(['display']);
   }
