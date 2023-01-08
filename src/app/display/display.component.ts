@@ -23,64 +23,64 @@ export class DisplayComponent implements OnInit {
  
   ngOnInit(): void {
     let nurl = "http://localhost:5000/api/get_data"
-    this.http.get<any>(nurl).subscribe((data) => {
+  //   this.http.get<any>(nurl).subscribe((data) => {
       
-      this.templist = data;
-      this.ms=this.templist['metrics']
-      console.log(this.ms)
-      for (let i = 0; i < this.templist['passengers'].length; i++) {
-        let t1 = this.templist['date'][i]
-        let t2 = Number(this.templist['passengers'][i])
-        let cord = {
-          x: t1, y: t2
-        }
-        this.dates.push(t1);
-        this.passengers.push(cord);
-      }
+  //     this.templist = data;
+  //     this.ms=this.templist['metrics']
+  //     console.log(this.ms)
+  //     for (let i = 0; i < this.templist['passengers'].length; i++) {
+  //       let t1 = this.templist['date'][i]
+  //       let t2 = Number(this.templist['passengers'][i])
+  //       let cord = {
+  //         x: t1, y: t2
+  //       }
+  //       this.dates.push(t1);
+  //       this.passengers.push(cord);
+  //     }
 
-      for (let i = 0; i < this.templist['forecast'].length; i++) {
-        let t1 = this.templist['date'][this.templist['passengers'].length + i]
-        let t2 = Number(this.templist['forecast'][i])
-        let cord = {
-          x: t1, y: t2
-        }
-        this.dates.push(t1);
-        this.forevalue.push(cord);
-      }
-      console.log(this.dates);
-      console.log(this.passengers);
-      console.log(this.forevalue);
-    });
+  //     for (let i = 0; i < this.templist['forecast'].length; i++) {
+  //       let t1 = this.templist['date'][this.templist['passengers'].length + i]
+  //       let t2 = Number(this.templist['forecast'][i])
+  //       let cord = {
+  //         x: t1, y: t2
+  //       }
+  //       this.dates.push(t1);
+  //       this.forevalue.push(cord);
+  //     }
+  //     console.log(this.dates);
+  //     console.log(this.passengers);
+  //     console.log(this.forevalue);
+  //   });
 
-  }
-  getdata() {
-    this.schar=true
-    this.smet=false
-    const hello = new Chart('myChart', {
-			type: 'line',
-			data: {
-				labels: this.dates,
-				datasets: [{
-					label: 'Trained',
-					data: this.passengers,
-					tension: 0.3,
-					borderColor:'rgba(100,25,12)',
-					backgroundColor: 'rgba(120, 20, 320)'
-				},
-				{
-					label: 'Forecast',
-					data: this.forevalue,
-					tension: 0.3,
-					borderColor: 'rgba(242, 120, 63)',
-					backgroundColor: 'rgba(242, 120, 63)'
-			}]
-			},
-			options: {
-				scales: {
+  // }
+  // getdata() {
+  //   this.schar=true
+  //   this.smet=false
+  //   const hello = new Chart('myChart', {
+	// 		type: 'line',
+	// 		data: {
+	// 			labels: this.dates,
+	// 			datasets: [{
+	// 				label: 'Trained',
+	// 				data: this.passengers,
+	// 				tension: 0.3,
+	// 				borderColor:'rgba(100,25,12)',
+	// 				backgroundColor: 'rgba(120, 20, 320)'
+	// 			},
+	// 			{
+	// 				label: 'Forecast',
+	// 				data: this.forevalue,
+	// 				tension: 0.3,
+	// 				borderColor: 'rgba(242, 120, 63)',
+	// 				backgroundColor: 'rgba(242, 120, 63)'
+	// 		}]
+	// 		},
+	// 		options: {
+	// 			scales: {
 
-				}
-			}
-		});
+	// 			}
+	// 		}
+	// 	});
   }
   formetrics()
   {
