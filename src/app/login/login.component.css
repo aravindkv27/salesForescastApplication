@@ -84,7 +84,7 @@
   }
   .register-btn {
     display: block;
-    margin-right: auto;
+    margin-right:0%;
     border: none;
     outline: none;
     background: #ff652f;
@@ -97,7 +97,7 @@
   }
   .login-btn {
     display: block;
-    margin-left: auto;
+    margin-left: 0%;
     border: none;
     outline: none;
     background: #ff652f;
@@ -145,5 +145,5 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-left: 20px;
+  margin-left: 10px;
 }
