@@ -16,15 +16,18 @@ export class DisplayComponent implements OnInit {
   dates: any =[];
   ms:any=[];
   schar=false
-  smet=false
+  smet=false  
+  ImagePath: string;
 
-
-  constructor(private http:HttpClient,private route:Router) { Chart.register(... registerables)}
+  constructor(private http:HttpClient,private route:Router) {
+    this.ImagePath = 'D:\Kaar\December\Digi\SalesForescastApplication\sfa-app\src\assets\img\plot.jpg'
+   }
  
   ngOnInit(): void {
     let nurl = "http://localhost:5000/api/get_data"
   
   }
+
   formetrics()
   {
     this.smet=true
