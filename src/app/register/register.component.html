@@ -1,14 +1,22 @@
-<div class="over">
-  <div class="wrapper">
-      <form [formGroup]="register" class="form-group">
+<div class="login-wrapper">
+  
+      <form [formGroup]="register" class="form">
         <h2>REGISTER</h2>
+        <div class="input-group">
            <input type="email" placeholder="EmailId" class="cvar" formControlName="email"/>
+        </div>
+        <div class="input-group">
            <input type="password" placeholder="Password" class="cvar" formControlName="pass"/>
+        </div>
+        <div class="input-group">
            <input type="password" placeholder="Re-typePassword" class="cvar" formControlName="repass" />
-           <div class="btns">
-                <button (click)="onsubmit(register.value)" [disabled]="register.invalid" class="glow-on-hover">Register</button>
-                <button (click)="goToLogin()" id="logbt"class="glow-on-hover">Login</button>
+        </div> 
+          <div class="btns">
+                <button (click)="onsubmit(register.value)" [disabled]="register.invalid" class="register-btn">Register</button>
+                <button (click)="goToLogin()" id="logbt"class="login-btn">Login</button>
            </div>
       </form>
-    </div>
+  
 </div>
+
+  

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Chart, registerables } from 'chart.js';
 import { Router } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-display',
@@ -20,7 +21,7 @@ export class DisplayComponent implements OnInit {
   ImagePath: string;
 
   constructor(private http:HttpClient,private route:Router) {
-    this.ImagePath = 'D:\Kaar\December\Digi\SalesForescastApplication\sfa-app\src\assets\img\plot.jpg'
+    this.ImagePath = 'assets/images/plot.jpg'
    }
  
   ngOnInit(): void {
@@ -39,6 +40,6 @@ export class DisplayComponent implements OnInit {
   }
   routelogout()
   {
-    this.route.navigate(['signup'])
+    this.route.navigate(['login'])
   }
 }

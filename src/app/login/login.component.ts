@@ -18,41 +18,38 @@ export class LoginComponent implements OnInit {
   login:any =FormGroup;
   users:any=[];
   url = 'http://localhost:5000/api/readusers';
-  constructor(private fb:FormBuilder,private router: Router,private proser: ProserviceService,private http: HttpClient, private snb: MatSnackBar){}
-
+  constructor(private fb:FormBuilder,private route: Router,private proser: ProserviceService,private http: HttpClient,private snb: MatSnackBar){}
   ngOnInit(): void {
+    this.login=this.fb.group({
+        email:['',Validators.compose([Validators.required,Validators.email])],
+        pass:['',Validators.compose([Validators.required,Validators.minLength(5)])]
+      })
 
-    this.login = this.fb.group({
-      email:["",Validators.compose([Validators.required,Validators.email])],
-      pass:["",Validators.compose([Validators.required,Validators.minLength(7)])]
-
-    })
-
-    this.http.get<any>(this.url).subscribe((data:any) => {
-      this.users = data['data'];
-      console.log(this.users);
-    });
+    this.http.get<any>(this.url).subscribe((data: any) => {
+        this.users = data['data'];
+        console.log(this.users);
+      });
     
   }
-
-  onlogin(data:any){
-
+  onlogin(data:any)
+  {
     if(data.email)
     {
-      this.users.forEach((item:any) =>{
-      if(item.email == data.email && item.password == data.password){
-        console.log(data)
-        this.snb.open("Logged Successfully", 'close', {duration: 4000});
-        this.router.navigate(['home'])
-      }
-      else {
-        localStorage.clear();
-      }
-      });
+        this.users.forEach((item:any) => {
+        if(item.email == data.email && item.pass == data.pass){
+          console.log(data)
+          this.snb.open('Logged Successfully', 'close', {duration: 3000});
+          this.route.navigate(['home'])
+        }
+        else{
+          localStorage.clear();
+         }
+        });
     }
   }
-
-  goToSignup(){
-    this.router.navigate(['register']);
+  goToSignup()
+  {
+    this.route.navigate(['register']);
   }
 }
+
