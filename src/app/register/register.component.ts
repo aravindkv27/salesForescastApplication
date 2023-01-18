@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
    if(data.pass==data.repass)
    {
     this.http.post(this.url1,params).subscribe((data:any)=>{});
-    this.snb.open(' Registered Successfully........Proceed Login ', 'close', {duration: 3000});
+    this.snb.open(' Registered Successfully...Proceed Login ', 'close', {duration: 3000});
     this.route.navigate(['login'])
    }
    else{
